@@ -17,6 +17,7 @@ const Home: NextPage = () => {
             className="flex justify-center mt-12"
             href="https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o"
             target="_blank"
+            rel="noreferrer"
           >
             <StdDeviationIcon />
           </a>
