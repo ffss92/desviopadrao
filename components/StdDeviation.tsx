@@ -162,12 +162,15 @@ const StdDeviation: React.FC = () => {
         md:text-base shadow-lg mt-4 focus:outline-none focus:ring-stone-700 focus:ring 
         rounded-md text-stone-900 bg-stone-100 placeholder:text-stone-500"
       />
+      {/* Cleat Btn */}
       <button
         onClick={() => {
           setTextInput("");
           setNumbersList([]);
         }}
-        className="text-red-500 hover:bg-red-600 hover:text-white rounded-md py-1.5 text-sm mt-2 font-semibold trasition duration-200 ease-in-out"
+        className="text-red-500 hover:bg-red-600 hover:text-white 
+        rounded-md py-1.5 text-sm mt-2 font-semibold 
+        trasition duration-200 ease-in-out hover:shadow-md"
       >
         Limpar
       </button>
