@@ -8,7 +8,7 @@ function calculateMean(nums: number[]) {
   );
 }
 
-function stdDeviation(nums: number[], type: StdDeviation) {
+function stdDeviation(nums: number[], type: StdDeviationType) {
   const mean = calculateMean(nums);
   const numberElements = nums.length;
   const sumNums = nums.reduce((prev, curr) => prev + curr);
@@ -28,9 +28,9 @@ function stdDeviation(nums: number[], type: StdDeviation) {
   };
 }
 
-type StdDeviation = "population" | "sample";
+type StdDeviationType = "population" | "sample";
 
-const StandardDeviation: React.FC = () => {
+const StdDeviation: React.FC = () => {
   const initialStd = {
     mean: 0,
     numberElements: 0,
@@ -38,7 +38,7 @@ const StandardDeviation: React.FC = () => {
     variance: 0,
     sumNums: 0,
   };
-  const [currentType, setCurrentType] = useState<StdDeviation>("population");
+  const [currentType, setCurrentType] = useState<StdDeviationType>("population");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [textInput, setTextInput] = useState("");
   const [numbersList, setNumbersList] = useState<number[]>([]);
@@ -66,21 +66,21 @@ const StandardDeviation: React.FC = () => {
       regex: /(\d+\.?\d*)\,?/g,
       buttonText: "Vírgula",
       placeholderText:
-        "Digite os números separados por vírgula.\nEx: 1,25.2,32,52,21",
+        "Digite o conjunto de dados separados por vírgula.\nEx: 1,25.2,32,52,21",
     },
     {
       sep: " ",
       regex: /(\d+\.?\d*)\s?/g,
       buttonText: "Espaço",
       placeholderText:
-        "Digite os números separados por um espaço em branco.\nEx: 1 25.2 32 52 21",
+        "Digite o conjunto de dados separados por um espaço em branco.\nEx: 1 25.2 32 52 21",
     },
     {
       sep: ";",
       regex: /(\d+\.?\d*)\;?/g,
       buttonText: "Ponto e vírgula",
       placeholderText:
-        "Digite os números separados por ponto e vírgula.\nEx: 1;25.2;32;52;21",
+        "Digite o conjunto de dados separados por ponto e vírgula.\nEx: 1;25.2;32;52;21",
     },
   ];
 
@@ -113,8 +113,8 @@ const StandardDeviation: React.FC = () => {
           <button
             className={
               currentType === "population"
-                ? "bg-yellow-200 text-yellow-900 p-2 flex-1 sm:flex-none"
-                : "bg-yellow-600 text-white shadow p-2 flex-1 sm:flex-none"
+                ? "bg-orange-600 text-white font-semibold p-2 flex-1 sm:flex-none shadow-inner transition duration-200 ease-in-out"
+                : "bg-orange-100 text-orange-900 font-semibold shadow p-2 flex-1 sm:flex-none transition duration-200 ease-in-out"
             }
             onClick={() => setCurrentType("population")}
           >
@@ -123,8 +123,8 @@ const StandardDeviation: React.FC = () => {
           <button
             className={
               currentType === "sample"
-                ? "bg-yellow-200 text-yellow-900 p-2 border-yellow-800 flex-1 sm:flex-none"
-                : "bg-yellow-600 text-white shadow p-2 flex-1 sm:flex-none"
+                ? "bg-orange-600 text-white font-semibold p-2 flex-1 sm:flex-none shadow-inner transition duration-200 ease-in-out"
+                : "bg-orange-100 text-orange-900 font-semibold shadow p-2 flex-1 sm:flex-none transition duration-200 ease-in-out"
             }
             onClick={() => setCurrentType("sample")}
           >
@@ -138,8 +138,8 @@ const StandardDeviation: React.FC = () => {
               onClick={() => handleClick(idx)}
               className={
                 idx === currentIndex
-                  ? "bg-blue-200 hover:bg-blue-300 text-blue-900 p-2 transition duration-200 ease-in-out flex-1 sm:flex-none"
-                  : "bg-blue-600 hover:bg-blue-700 text-white p-2 transition duration-200 ease-in-out flex-1 sm:flex-none"
+                  ? "bg-blue-600 font-semibold text-white p-2 transition duration-200 ease-in-out flex-1 sm:flex-none shadow-inner"
+                  : "bg-blue-100 font-semibold text-blue-900 p-2 transition duration-200 ease-in-out flex-1 sm:flex-none"
               }
             >
               {separation.buttonText}
@@ -153,7 +153,9 @@ const StandardDeviation: React.FC = () => {
         value={textInput}
         placeholder={separations[currentIndex].placeholderText}
         name="nums"
-        className="p-2 w-full text-sm md:text-base shadow-lg mt-4 focus:outline-none focus:ring-yellow-600 focus:ring rounded-lg text-stone-900 bg-stone-200 placeholder:text-stone-500"
+        className="p-2 transition duration-200 ease-in-out w-full text-sm 
+        md:text-base shadow-lg mt-4 focus:outline-none focus:ring-yellow-500 focus:ring 
+        rounded-lg text-stone-900 bg-stone-100 placeholder:text-stone-500"
       />
 
       <div className="flex flex-col mt-4">
@@ -181,4 +183,4 @@ const StandardDeviation: React.FC = () => {
   );
 };
 
-export default StandardDeviation;
+export default StdDeviation;

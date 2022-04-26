@@ -2,8 +2,8 @@ const StdDeviationIcon = () => {
   return (
     <svg
       xlinkHref="http://www.w3.org/1999/xlink"
-      width="200px"
-      height="60px"
+      width="175px"
+      height="70px"
       viewBox="0 -3581.3 14439.6 5502.6"
       role="img"
       focusable="false"
