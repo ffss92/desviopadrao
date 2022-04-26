@@ -30,15 +30,17 @@ function stdDeviation(nums: number[], type: StdDeviationType) {
 
 type StdDeviationType = "population" | "sample";
 
+const initialStd = {
+  mean: 0,
+  numberElements: 0,
+  stdDev: 0,
+  variance: 0,
+  sumNums: 0,
+};
+
 const StdDeviation: React.FC = () => {
-  const initialStd = {
-    mean: 0,
-    numberElements: 0,
-    stdDev: 0,
-    variance: 0,
-    sumNums: 0,
-  };
-  const [currentType, setCurrentType] = useState<StdDeviationType>("population");
+  const [currentType, setCurrentType] =
+    useState<StdDeviationType>("population");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [textInput, setTextInput] = useState("");
   const [numbersList, setNumbersList] = useState<number[]>([]);
@@ -46,7 +48,7 @@ const StdDeviation: React.FC = () => {
 
   useEffect(() => {
     // Set default if no numbers
-    if (numbersList.length === 0) {
+    if (numbersList.length < 2) {
       setStd(initialStd);
       return;
     }
@@ -106,8 +108,10 @@ const StdDeviation: React.FC = () => {
     }
     setTextInput(validInput?.join("") || "");
   };
+
   return (
     <>
+      {/* Options */}
       <div className="flex flex-col sm:flex-row justify-between mt-12">
         <div className="flex rounded-md shadow-md hover:shadow-lg overflow-hidden text-xs">
           <button
@@ -147,6 +151,7 @@ const StdDeviation: React.FC = () => {
           ))}
         </div>
       </div>
+      {/* User Input */}
       <textarea
         rows={3}
         onChange={handleChange}
@@ -154,10 +159,19 @@ const StdDeviation: React.FC = () => {
         placeholder={separations[currentIndex].placeholderText}
         name="nums"
         className="p-2 transition duration-200 ease-in-out w-full text-sm 
-        md:text-base shadow-lg mt-4 focus:outline-none focus:ring-yellow-500 focus:ring 
-        rounded-lg text-stone-900 bg-stone-100 placeholder:text-stone-500"
+        md:text-base shadow-lg mt-4 focus:outline-none focus:ring-stone-700 focus:ring 
+        rounded-md text-stone-900 bg-stone-100 placeholder:text-stone-500"
       />
-
+      <button
+        onClick={() => {
+          setTextInput("");
+          setNumbersList([]);
+        }}
+        className="text-red-500 hover:bg-red-600 hover:text-white rounded-md py-1.5 text-sm mt-2 font-semibold trasition duration-200 ease-in-out"
+      >
+        Limpar
+      </button>
+      {/* Results */}
       <div className="flex flex-col mt-4">
         <span className="text-sm md:text-base">
           {currentType === "population"
@@ -166,8 +180,8 @@ const StdDeviation: React.FC = () => {
         </span>
         <span className="text-sm md:text-base">
           {currentType === "population"
-            ? `σ² - variância populacional ${std.stdDev.toFixed(2)}`
-            : `s² - variância amostral ${std.stdDev.toFixed(2)}`}
+            ? `σ² - variância populacional ${std.variance.toFixed(2)}`
+            : `s² - variância amostral ${std.variance.toFixed(2)}`}
         </span>
         <span className="text-sm md:text-base">
           μ - média do conjunto {std.mean.toFixed(2)}

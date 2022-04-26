@@ -18,7 +18,6 @@ const Home: NextPage = () => {
             <StdDeviationIcon />
           </a>
           <StandardDeviation />
-
         </div>
       </div>
       {/* Info */}
