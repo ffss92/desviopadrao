@@ -8,6 +8,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col bg-stone-900 min-h-screen">
       <Head>
+        <title>Desvio Padrão</title>
         <Meta />
       </Head>
       {/* Formula */}
