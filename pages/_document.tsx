@@ -24,7 +24,7 @@ export default function Document() {
         <link rel="manifest" href="/site.webmanifest" />
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-MY9YZ2S6QR`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -32,7 +32,7 @@ export default function Document() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-MY9YZ2S6QR', {
+            gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}, {
               page_path: window.location.pathname,
             });
           `,
