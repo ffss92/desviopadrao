@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Meta from "../components/Meta/Meta";
 import StandardDeviation from "../components/StdDeviation";
 import StdDeviationIcon from "../components/StdDeviationIcon";
 
@@ -9,7 +8,16 @@ const Home: NextPage = () => {
     <div className="flex flex-col bg-stone-900 min-h-screen">
       <Head>
         <title>Desvio Padrão</title>
-        <Meta />
+        <meta
+          name="description"
+          content="Calculadora on-line de desvio padrão populacional e amostral."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta property="og:title" content="Desvio Padrão" />
+        <meta
+          property="og:description"
+          content="Calculadora on-line de desvio padrão populacional e amostral."
+        />
       </Head>
       {/* Formula */}
       <div className="flex flex-col flex-1">

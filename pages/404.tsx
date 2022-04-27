@@ -1,8 +1,12 @@
+import Head from "next/head";
 import Link from "next/link";
 
 const NotFound = () => {
   return (
     <div className="bg-stone-900 flex flex-col min-h-screen justify-center items-center">
+      <Head>
+        <title>Nada aqui...</title>
+      </Head>
       <h1 className="text-white text-6xl font-serif">404</h1>
       <p className="text-stone-400 mt-2">
         Não tem nada aqui!{" "}
