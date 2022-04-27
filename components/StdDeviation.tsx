@@ -118,7 +118,7 @@ const StdDeviation: React.FC = () => {
             className={
               currentType === "population"
                 ? "bg-orange-600 text-white font-semibold p-2 flex-1 sm:flex-none shadow-inner transition duration-200 ease-in-out"
-                : "bg-orange-100 text-orange-900 font-semibold shadow p-2 flex-1 sm:flex-none transition duration-200 ease-in-out"
+                : "bg-orange-100 hover:bg-orange-200 text-orange-900 font-semibold shadow p-2 flex-1 sm:flex-none transition duration-200 ease-in-out"
             }
             onClick={() => setCurrentType("population")}
           >
@@ -128,7 +128,7 @@ const StdDeviation: React.FC = () => {
             className={
               currentType === "sample"
                 ? "bg-orange-600 text-white font-semibold p-2 flex-1 sm:flex-none shadow-inner transition duration-200 ease-in-out"
-                : "bg-orange-100 text-orange-900 font-semibold shadow p-2 flex-1 sm:flex-none transition duration-200 ease-in-out"
+                : "bg-orange-100 hover:bg-orange-200 text-orange-900 font-semibold shadow p-2 flex-1 sm:flex-none transition duration-200 ease-in-out"
             }
             onClick={() => setCurrentType("sample")}
           >
@@ -143,7 +143,7 @@ const StdDeviation: React.FC = () => {
               className={
                 idx === currentIndex
                   ? "bg-blue-600 font-semibold text-white p-2 transition duration-200 ease-in-out flex-1 sm:flex-none shadow-inner"
-                  : "bg-blue-100 font-semibold text-blue-900 p-2 transition duration-200 ease-in-out flex-1 sm:flex-none"
+                  : "bg-blue-100 hover:bg-blue-200 font-semibold text-blue-900 p-2 transition duration-200 ease-in-out flex-1 sm:flex-none"
               }
             >
               {separation.buttonText}
