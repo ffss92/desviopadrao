@@ -153,7 +153,7 @@ const StdDeviation: React.FC = () => {
       </div>
       {/* User Input */}
       <textarea
-        rows={3}
+        rows={5}
         onChange={handleChange}
         value={textInput}
         placeholder={separations[currentIndex].placeholderText}
