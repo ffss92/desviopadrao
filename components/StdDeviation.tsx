@@ -68,21 +68,21 @@ const StdDeviation: React.FC = () => {
       regex: /(\d+\.?\d*)\,?/g,
       buttonText: "Vírgula",
       placeholderText:
-        "Digite o conjunto de dados separados por vírgula.\nEx: 1,25.2,32,52,21",
+        "Digite o conjunto de dados separados por vírgula.\nEx: 1,25.2,32,52,24",
     },
     {
       sep: " ",
       regex: /(\d+\.?\d*)\s?/g,
       buttonText: "Espaço",
       placeholderText:
-        "Digite o conjunto de dados separados por um espaço em branco.\nEx: 1 25.2 32 52 21",
+        "Digite o conjunto de dados separados por um espaço em branco.\nEx: 1 25.2 32 52 24",
     },
     {
       sep: ";",
       regex: /(\d+\.?\d*)\;?/g,
       buttonText: "Ponto e vírgula",
       placeholderText:
-        "Digite o conjunto de dados separados por ponto e vírgula.\nEx: 1;25.2;32;52;21",
+        "Digite o conjunto de dados separados por ponto e vírgula.\nEx: 1;25.2;32;52;24",
     },
   ];
 
