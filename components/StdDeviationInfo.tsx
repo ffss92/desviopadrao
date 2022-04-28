@@ -64,7 +64,7 @@ const StdDeviationInfo = () => {
       <h2 className="mt-8 font-semibold text-xl">Amostral</h2>
       <p className="mt-2 text-sm md:text-base text-stone-300 indent-8 text-justify">
         Baseado em uma amostra, o desvio padrão amostral é uma estimativa do
-        desvio padrão de parte de um conjunto. Pode ser encontrado através da
+        desvio padrão de um determinado conjunto. Pode ser encontrado através da
         formula abaixo:
       </p>
       <div className="flex justify-center mt-2">
