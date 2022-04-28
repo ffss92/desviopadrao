@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import StdDeviationIcon from "./StdDeviationIcon";
+import StdDeviationSample from "./formulas/StdDeviationSample";
+import StdDeviationPopulation from "./formulas/StdDeviationPopulation";
 
 function calculateMean(nums: number[]) {
   return (
@@ -112,6 +115,18 @@ const StdDeviation: React.FC = () => {
   return (
     <>
       {/* Options */}
+      <a
+        className="flex justify-center mt-12"
+        href="https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {currentType === "population" ? (
+          <StdDeviationPopulation />
+        ) : (
+          <StdDeviationSample />
+        )}
+      </a>
       <div className="flex flex-col sm:flex-row justify-between mt-12">
         <div className="flex rounded-md shadow-md hover:shadow-lg overflow-hidden text-xs">
           <button
@@ -175,19 +190,21 @@ const StdDeviation: React.FC = () => {
         Limpar
       </button>
       {/* Results */}
-      <div className="flex flex-col mt-4">
+      <div className="flex flex-col mt-4 text-stone-300">
         <span className="text-sm md:text-base">
           {currentType === "population"
-            ? `σ - desvio padrão populacional ${std.stdDev.toFixed(2)}`
-            : `s - desvio padrão amostral ${std.stdDev.toFixed(2)}`}
+            ? `σ - desvio padrão: ${std.stdDev.toFixed(2)}`
+            : `s - desvio padrão: ${std.stdDev.toFixed(2)}`}
         </span>
         <span className="text-sm md:text-base">
           {currentType === "population"
-            ? `σ² - variância populacional ${std.variance.toFixed(2)}`
-            : `s² - variância amostral ${std.variance.toFixed(2)}`}
+            ? `σ² - variância: ${std.variance.toFixed(2)}`
+            : `s² - variância: ${std.variance.toFixed(2)}`}
         </span>
         <span className="text-sm md:text-base">
-          μ - média do conjunto {std.mean.toFixed(2)}
+          {currentType === "population"
+            ? `μ - média do conjunto: ${std.mean.toFixed(2)}`
+            : `x̄ - média do conjunto: ${std.mean.toFixed(2)}`}
         </span>
         <span className="text-sm md:text-base">
           N - tamanho do conjunto: {std.numberElements}

@@ -1,7 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import StandardDeviation from "../components/StdDeviation";
+import StdDeviation from "../components/StdDeviation";
 import StdDeviationIcon from "../components/StdDeviationIcon";
+import StdDeviationInfo from "../components/StdDeviationInfo";
+import StdDeviationSample from "../components/formulas/StdDeviationSample";
 
 const Home: NextPage = () => {
   return (
@@ -19,24 +21,19 @@ const Home: NextPage = () => {
           content="Calculadora on-line de desvio padrão populacional e amostral."
         />
       </Head>
-      {/* Formula */}
+      {/* Formula and Results */}
       <div className="flex flex-col flex-1">
         <div className="mt-12 container flex flex-col max-w-2xl p-4 mx-auto text-stone-200">
           <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-serif">
             Desvio Padrão
           </h1>
-          <a
-            className="flex justify-center mt-12"
-            href="https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <StdDeviationIcon />
-          </a>
-          <StandardDeviation />
+          <StdDeviation />
+          {/* Content */}
+          <StdDeviationInfo />
         </div>
       </div>
-      <div className="flex p-1 text-stone-700 text-sm justify-center">
+
+      <div className="flex p-2 text-stone-700 text-sm justify-center">
         © Todos os direitos reservados.
       </div>
     </div>
