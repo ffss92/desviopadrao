@@ -5,7 +5,7 @@ import StdDeviationInfo from "../components/stdDeviation/StdDeviationInfo";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col bg-stone-900 min-h-screen">
+    <div className="flex flex-col bg-stone-900">
       <Head>
         <title>Desvio Padrão</title>
         <meta
@@ -20,8 +20,8 @@ const Home: NextPage = () => {
         />
       </Head>
       {/* Formula and Results */}
-      <div className="flex flex-col flex-1">
-        <div className="mt-12 container flex flex-col max-w-2xl p-4 mx-auto text-stone-200">
+      <div className="flex flex-1">
+        <div className="mt-4 container flex flex-col max-w-2xl p-4 mx-auto text-stone-200">
           <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-serif">
             Desvio Padrão
           </h1>
@@ -29,10 +29,6 @@ const Home: NextPage = () => {
           {/* Content */}
           <StdDeviationInfo />
         </div>
-      </div>
-
-      <div className="flex p-2 text-stone-700 text-sm justify-center">
-        © Todos os direitos reservados.
       </div>
     </div>
   );

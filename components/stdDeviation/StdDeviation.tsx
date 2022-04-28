@@ -1,36 +1,9 @@
 import { useState, useEffect } from "react";
 import StdDeviationSample from "../formulas/StdDeviationSample";
 import StdDeviationPopulation from "../formulas/StdDeviationPopulation";
+import stdDeviation from "../../lib/math/stdDeviation";
 
-function calculateMean(nums: number[]) {
-  return (
-    nums.reduce((prev, current) => {
-      return prev + current;
-    }) / nums.length
-  );
-}
-
-function stdDeviation(nums: number[], type: StdDeviationType) {
-  const mean = calculateMean(nums);
-  const numberElements = nums.length;
-  const sumNums = nums.reduce((prev, curr) => prev + curr);
-  let v = 0;
-  for (let i = 0; i < nums.length; i++) {
-    const el = nums[i];
-    v += Math.pow(el - mean, 2);
-  }
-  const variance =
-    type === "population" ? v / numberElements : v / (numberElements - 1);
-  return {
-    mean,
-    numberElements,
-    stdDev: Math.sqrt(variance),
-    variance,
-    sumNums,
-  };
-}
-
-type StdDeviationType = "population" | "sample";
+export type StdDeviationType = "population" | "sample";
 
 const initialStd = {
   mean: 0,
@@ -176,15 +149,22 @@ const StdDeviation: React.FC = () => {
         md:text-base shadow-lg mt-4 focus:outline-none focus:ring-stone-700 focus:ring 
         rounded-md text-stone-900 bg-stone-100 placeholder:text-stone-500"
       />
-      {/* Cleat Btn */}
+      {/* Clear Btn */}
       <button
+        disabled={textInput === ""}
         onClick={() => {
           setTextInput("");
           setNumbersList([]);
         }}
-        className="text-red-500 hover:bg-red-600 hover:text-white 
-        rounded-md py-1.5 text-sm mt-2 font-semibold 
-        trasition duration-200 ease-in-out hover:shadow-md"
+        className={
+          textInput === ""
+            ? `text-stone-400 py-1.5 text-sm mt-2 font-semibold 
+            trasition duration-200 ease-in-out cursor-default
+            `
+            : `text-red-500 hover:bg-red-600 hover:text-white 
+            rounded-md py-1.5 text-sm mt-2 font-semibold 
+            trasition duration-200 ease-in-out hover:shadow-md`
+        }
       >
         Limpar
       </button>
