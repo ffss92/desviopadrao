@@ -22,7 +22,10 @@ const InfoSubsection: React.FC<InfoSubsectionProps> = ({
       </p>
       <div className="flex justify-center my-4">{formula}</div>
       {items.map((item) => (
-        <p className="text-sm md:text-base text-stone-300 indent-8 text-justify">
+        <p
+          key={item.name}
+          className="text-sm md:text-base text-stone-300 indent-8 text-justify"
+        >
           <span className="font-bold">{item.name}</span> - {item.description}
         </p>
       ))}
