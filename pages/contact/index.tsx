@@ -1,6 +1,8 @@
 import { NextPage } from "next";
 import ContactForm from "../../components/forms/ContactForm";
 
+// TODO: Adicionar backend
+
 const Contact: NextPage = () => {
   return (
     <div className="flex flex-col flex-1 items-center">
