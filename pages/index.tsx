@@ -1,9 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import StdDeviation from "../components/StdDeviation";
-import StdDeviationIcon from "../components/StdDeviationIcon";
-import StdDeviationInfo from "../components/StdDeviationInfo";
-import StdDeviationSample from "../components/formulas/StdDeviationSample";
+import StdDeviation from "../components/stdDeviation/StdDeviation";
+import StdDeviationInfo from "../components/stdDeviation/StdDeviationInfo";
 
 const Home: NextPage = () => {
   return (

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import StdDeviationIcon from "./StdDeviationIcon";
-import StdDeviationSample from "./formulas/StdDeviationSample";
-import StdDeviationPopulation from "./formulas/StdDeviationPopulation";
+import StdDeviationSample from "../formulas/StdDeviationSample";
+import StdDeviationPopulation from "../formulas/StdDeviationPopulation";
 
 function calculateMean(nums: number[]) {
   return (
