@@ -5,6 +5,30 @@ import stdDeviation from "../../lib/math/stdDeviation";
 
 export type StdDeviationType = "population" | "sample";
 
+const separations = [
+  {
+    sep: ",",
+    regex: /(\d+\.?\d*)\,?/g,
+    buttonText: "Vírgula",
+    placeholderText:
+      "Digite o conjunto de dados separados por vírgula. Ex: 1,25.2,32,52,24",
+  },
+  {
+    sep: " ",
+    regex: /(\d+\.?\d*)\s?/g,
+    buttonText: "Espaço",
+    placeholderText:
+      "Digite o conjunto de dados separados por um espaço em branco. Ex: 1 25.2 32 52 24",
+  },
+  {
+    sep: ";",
+    regex: /(\d+\.?\d*)\;?/g,
+    buttonText: "Ponto e vírgula",
+    placeholderText:
+      "Digite o conjunto de dados separados por ponto e vírgula. Ex: 1;25.2;32;52;24",
+  },
+];
+
 const initialStd = {
   mean: 0,
   numberElements: 0,
@@ -36,30 +60,6 @@ const StdDeviation: React.FC = () => {
       sumNums: results.sumNums,
     });
   }, [numbersList, currentType]);
-
-  const separations = [
-    {
-      sep: ",",
-      regex: /(\d+\.?\d*)\,?/g,
-      buttonText: "Vírgula",
-      placeholderText:
-        "Digite o conjunto de dados separados por vírgula. Ex: 1,25.2,32,52,24",
-    },
-    {
-      sep: " ",
-      regex: /(\d+\.?\d*)\s?/g,
-      buttonText: "Espaço",
-      placeholderText:
-        "Digite o conjunto de dados separados por um espaço em branco. Ex: 1 25.2 32 52 24",
-    },
-    {
-      sep: ";",
-      regex: /(\d+\.?\d*)\;?/g,
-      buttonText: "Ponto e vírgula",
-      placeholderText:
-        "Digite o conjunto de dados separados por ponto e vírgula. Ex: 1;25.2;32;52;24",
-    },
-  ];
 
   const handleClick = (idx: number) => {
     const numbers = textInput.split(separations[currentIndex].sep);
