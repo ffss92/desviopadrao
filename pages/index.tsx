@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col bg-stone-900">
       <Head>
-                <meta
+        <meta
           name="description"
           content="Calculadora on-line de desvio padrão populacional e amostral. 
           O desvio padrão é uma medida utilizada para indicar uma medida de
