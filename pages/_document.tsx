@@ -4,6 +4,19 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta
+          name="description"
+          content="Calculadora on-line de desvio padrão populacional e amostral. 
+          O desvio padrão é uma medida utilizada para indicar uma medida de
+          dispersão dos dados em torno de média amostral, amplamente utilizada
+          tanto no campo da estatística quanto da probabilidade."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta property="og:title" content="Desvio Padrão" />
+        <meta
+          property="og:description"
+          content="Calculadora on-line de desvio padrão populacional e amostral."
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

@@ -8,16 +8,6 @@ const Home: NextPage = () => {
     <div className="flex flex-col bg-stone-900">
       <Head>
         <title>Desvio Padrão</title>
-        <meta
-          name="description"
-          content="Calculadora on-line de desvio padrão populacional e amostral."
-        />
-        <meta name="robots" content="index,follow" />
-        <meta property="og:title" content="Desvio Padrão" />
-        <meta
-          property="og:description"
-          content="Calculadora on-line de desvio padrão populacional e amostral."
-        />
       </Head>
       {/* Formula and Results */}
       <div className="flex flex-1">
