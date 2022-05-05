@@ -33,7 +33,7 @@ export default function Document() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', G-MY9YZ2S6QR, {
+            gtag('config', 'G-MY9YZ2S6QR', {
               page_path: window.location.pathname,
             });
           `,
